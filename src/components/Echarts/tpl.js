@@ -5,14 +5,14 @@ export default ()=>`<!DOCTYPE html>
     <title>echarts</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
     <style type="text/css">
       html,body {
         height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
-        // overflow: hidden;
-
+        font-family: 'Overpass', sans-serif !important;
       }
       #main {
         height: 100%;
@@ -20,7 +20,6 @@ export default ()=>`<!DOCTYPE html>
     </style>
     <script src="https://cdn.bootcss.com/echarts/4.8.0/echarts.min.js"></script>
   </head>
-  
   <body>
     <div id="main" ></div>
   <body>
