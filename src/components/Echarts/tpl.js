@@ -18,7 +18,7 @@ export default ()=>`<!DOCTYPE html>
         height: 100%;
       }
     </style>
-    <script src="https://cdn.bootcss.com/echarts/4.2.1/echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.8.0/echarts.min.js"></script>
   </head>
   
   <body>

@@ -4,6 +4,7 @@ import renderChart from './renderChart';
 import echarts from './echarts.min';
 import WebView from "react-native-webview";
 import getTpl from "./tpl" ;
+import {Text} from "react-native-paper";
 
 export default class App extends Component {
 
@@ -14,14 +15,16 @@ export default class App extends Component {
 
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.option !== this.props.option) {
-      // this.refs.chart.reload();
+      //alert('here');
+      this.refs.chart.reload()
+    /*if(nextProps.option !== this.props.option) {
+      //this.refs.chart.reload();
       if(Platform.OS === 'android'){
         this.refs.chart.reload();
       }else {
         this.setNewOption(nextProps.option) ;
       }
-    }
+    }*/
   }
   shouldComponentUpdate() {
     return false ;
@@ -43,7 +46,7 @@ export default class App extends Component {
                 backgroundColor: this.props.backgroundColor || 'transparent'
               }}
               originWhitelist={['*']}
-              source={Platform.OS === "ios"?{ html:getTpl() }:{uri:'file:///android_asset/tpl.html'}}
+              source={{html:getTpl() }}
               onMessage={event => this.props.onPress ? this.props.onPress(JSON.parse(event.nativeEvent.data)) : null}
           />
         </View>
