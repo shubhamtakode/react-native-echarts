@@ -59,6 +59,12 @@ export default class App extends Component {
                   }}
                   size="small"
               />}
+              onError={(err) => {
+                  this.props.onError && this.props.onError(err);
+              }}
+              onHttpError={(err) => {
+                  this.props.onError && this.props.onError(err);
+              }}
               onMessage={event => this.props.onPress ? this.props.onPress(JSON.parse(event.nativeEvent.data)) : null}
           />
         </View>
