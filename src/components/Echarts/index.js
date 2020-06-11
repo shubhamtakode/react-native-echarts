@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {  View, StyleSheet, Platform } from 'react-native';
+import {  View, StyleSheet, Platform, ActivityIndicator } from 'react-native';
 import renderChart from './renderChart';
 import echarts from './echarts.min';
 import WebView from "react-native-webview";
 import getTpl from "./tpl" ;
-import {Text} from "react-native-paper";
 
 export default class App extends Component {
 
@@ -47,6 +46,19 @@ export default class App extends Component {
               }}
               originWhitelist={['*']}
               source={{html:getTpl() }}
+              renderLoading={() => <ActivityIndicator
+                  style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      jusityContent: "space-around",
+                      flexWrap: "wrap",
+                      alignContent: "center",
+                  }}
+                  size="small"
+              />}
               onMessage={event => this.props.onPress ? this.props.onPress(JSON.parse(event.nativeEvent.data)) : null}
           />
         </View>
