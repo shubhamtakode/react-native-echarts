@@ -24,7 +24,7 @@ export default function renderChart(props) {
         }
         return val;
       });
-      window.postMessage(paramsString);
+      window.ReactNativeWebView.postMessage(paramsString);
     });
   `
 }
